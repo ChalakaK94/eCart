@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent {
+  @Input()
+  all = 0
+  @Input()
+  inStock = 0;
+  @Input()
+  outOfStock = 0
 
+  changeRadio($event: Event) {
+
+  }
 }

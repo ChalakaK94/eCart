@@ -526,3 +526,7 @@ export const products : Product[] = [
     slug: "michael-feburary-sk8-hi"
   }
 ];
+
+export const totalProducts = products.length;
+export  const  totalInStockProducts = products.filter(pro=>pro.is_in_inventory).length
+export  const  totalOutOfStockProducts = products.filter(pro=>!pro.is_in_inventory).length

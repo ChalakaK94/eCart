@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {products} from "./product";
+import {products, totalInStockProducts, totalOutOfStockProducts, totalProducts} from "./product";
 
 @Component({
   selector: 'app-product-list',
@@ -9,4 +9,7 @@ import {products} from "./product";
 export class ProductListComponent {
 
   products = products
+  readonly totalProducts = totalProducts;
+  protected readonly totalInStockProducts = totalInStockProducts;
+  protected readonly totalOutOfStockProducts = totalOutOfStockProducts;
 }
