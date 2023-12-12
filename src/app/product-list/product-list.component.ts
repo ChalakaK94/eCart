@@ -8,8 +8,14 @@ import {products, totalInStockProducts, totalOutOfStockProducts, totalProducts} 
 })
 export class ProductListComponent {
 
+  selectedRadioButton = 'all'
   products = products
   readonly totalProducts = totalProducts;
   protected readonly totalInStockProducts = totalInStockProducts;
   protected readonly totalOutOfStockProducts = totalOutOfStockProducts;
+
+
+  radioButtonChange(e: string) {
+    this.selectedRadioButton = e;
+  }
 }
