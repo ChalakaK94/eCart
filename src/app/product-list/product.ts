@@ -1,5 +1,6 @@
+import {Product} from "./product/model/product";
 
-export const products = [
+export const products : Product[] = [
   {
     id: 1,
     name: "Nike React Infinity Run Flyknit",
