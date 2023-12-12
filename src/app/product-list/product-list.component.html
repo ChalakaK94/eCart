@@ -1,9 +1,11 @@
-<app-search></app-search>
+<app-search (searchTerm)="onSearch($event)"></app-search>
 
 <app-filter [all]="totalProducts" [inStock]="totalInStockProducts" [outOfStock]="totalOutOfStockProducts"
             (radioButtonChange)="radioButtonChange($event)"></app-filter>
 <div class="ecart--products--container">
   <div *ngFor="let product of products">
-    <app-product  [product]="product" *ngIf="selectedRadioButton === 'all' || product.is_in_inventory.toString() === selectedRadioButton "></app-product>
+    <ng-container *ngIf="searchKey === '' || product.name.toLowerCase().includes(searchKey)">
+      <app-product  [product]="product" *ngIf="selectedRadioButton === 'all' || product.is_in_inventory.toString() === selectedRadioButton "></app-product>
+    </ng-container>
   </div>
 </div>

@@ -8,6 +8,8 @@ import {products, totalInStockProducts, totalOutOfStockProducts, totalProducts} 
 })
 export class ProductListComponent {
 
+  searchKey = ''
+
   selectedRadioButton = 'all'
   products = products
   readonly totalProducts = totalProducts;
@@ -17,5 +19,10 @@ export class ProductListComponent {
 
   radioButtonChange(e: string) {
     this.selectedRadioButton = e;
+  }
+
+  onSearch(value: string) {
+    console.log('pixel va'+  value)
+    this.searchKey = value
   }
 }

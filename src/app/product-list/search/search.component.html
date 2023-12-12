@@ -1,5 +1,5 @@
 <div class="ecart--search--product">
-  <input class="ecart-search-product-input">
-  <button class="btn btn-search">Search</button>
+  <input class="ecart-search-product-input" #inputValue>
+  <button class="btn btn-search" (click)="onSearch(inputValue)">Search</button>
 </div>
-<div class="ecart-search-result-for"><p><strong>Search result for:</strong> Mens wear</p></div>
+<div *ngIf="searchTxt !== ''" class="ecart-search-result-for"><p><strong>Search result for:</strong> {{searchTxt}}</p></div>
