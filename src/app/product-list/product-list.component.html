@@ -6,13 +6,13 @@
       <div class="ecart--add--to--wishlist">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
       </div>
-      <div class="ecart-on-sale-tag">75% OFF</div>
+      <div class="ecart-on-sale-tag" *ngIf="product.discountPrice">{{(100- (product.discountPrice/product.price * 100)).toFixed(0)}} % OFF</div>
     </div>
     <div class="ecart--product--image">
       <img [src]="product.imageURL" class="ecart--product--image">
     </div>
     <div class="ecart--add--to--price">
-      {{product.price}}
+      {{product.price | currency}}
     </div>
     <div class="ecart--product--name">{{product.name}}</div>
     <div class="ecart--product--category">{{product.gender}} . {{product.category}} . {{product.brand}}</div>
