@@ -1,1 +1,58 @@
-<p>product-details works!</p>
+<div class="ecart--product--details--info scroll">
+  <div class="ecart-product-detail-close">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+  <div class="ecart-product-detail-image">
+    <img [src]="selectedProduct.imageURL" class="ecart-product-detail-image">
+  </div>
+
+  <div class="ecart-product-detail">
+    <div class="ecart-product-detail-name">
+      <h2>{{selectedProduct.name}}</h2>
+    </div>
+    <div class="ecart-product-detail-gbc">
+      <span>{{selectedProduct.gender}}</span>
+      <span>{{selectedProduct.brand}}<</span>
+      <span>{{selectedProduct.category}}<</span>
+    </div>
+    <div class="ecart-product-detail-price">
+      <p>
+        <b>Price Each Pair:</b>
+        <span style="background-color: red; color:white"><s>{{selectedProduct.price| currency}}</s></span>
+        <span style="background-color: green; color:white">{{selectedProduct.price - selectedProduct.discountPrice! | currency}}</span> (Inclusive of all taxes)
+      </p>
+    </div>
+    <div class="ecart-product-detail-size">
+      <div style="padding: 5px 0;border-bottom: #ccc 2px solid">
+        <h4>Available Size</h4>
+      </div>
+      <diV style="margin-top: 20px">
+        <span class="ecart-product-detail-available-size" *ngFor="let size of selectedProduct.size">{{size}}</span>
+      </diV>
+    </div>
+
+    <div class="ecart-product-detail-color">
+      <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+        <h4>Available Color</h4>
+      </div>
+      <diV style="margin-top: 20px;">
+        <ng-container *ngFor="let color of selectedProduct.color">
+          <span class="ecart-product-detail-available-color" style="background-color: red;" [ngStyle]="{backgroundColor: color}"></span>
+        </ng-container>
+      </diV>
+    </div>
+
+    <div class="ecart-product-detail-desc">
+      <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+        <h4>Product Description</h4>
+      </div>
+      <div style="margin-top: 20px">
+        <p>{{selectedProduct.description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="ecart-product-detail-addtoCart">
+    <button class="btn-add-to-cart">ADD TO CART</button>
+  </div>
+</div>
+<!--<div class="overlay"></div>-->

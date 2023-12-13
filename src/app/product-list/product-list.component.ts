@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {products, totalInStockProducts, totalOutOfStockProducts, totalProducts} from "./product";
+import {Product} from "./product/model/product";
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +16,7 @@ export class ProductListComponent {
   readonly totalProducts = totalProducts;
   protected readonly totalInStockProducts = totalInStockProducts;
   protected readonly totalOutOfStockProducts = totalOutOfStockProducts;
+  selectedProduct!: Product;
 
 
   radioButtonChange(e: string) {
@@ -22,7 +24,6 @@ export class ProductListComponent {
   }
 
   onSearch(value: string) {
-    console.log('pixel va'+  value)
     this.searchKey = value
   }
 }
